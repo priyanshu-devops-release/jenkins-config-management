@@ -1,0 +1,12 @@
+jcasc:
+  authorization: |
+    authorizationStrategy:
+      github:
+        adminUserNames: "priyanshu3103"
+        organizationNames: "priyanshu-devops-release"
+        useRepositoryPermissions: false
+        authenticatedUserReadPermission: true
+        authenticatedUserCreateJobPermission: false
+        allowGithubWebHookPermission: false
+        allowAnonymousReadPermission: false
+        allowAnonymousJobStatusPermission: false
