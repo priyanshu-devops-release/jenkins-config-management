@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: jenkins-access-management
+  name: jenkins-config-management
 data:
   security.yaml: |
 {{ .Files.Get "jcasc/security.yaml" | indent 4 }}
