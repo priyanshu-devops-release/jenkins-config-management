@@ -1,5 +1,0 @@
-jcasc:
-  authorization: |
-      jenkins:
-        authorizationStrategy:
-          roleBased: {}
