@@ -55,12 +55,12 @@ jcasc:
 
                   - "Credentials/View"
 
-                  - "agents/Build"
-                  - "agents/Configure"
-                  - "agents/Connect"
-                  - "agents/Create"
-                  - "agents/Delete"
-                  - "agents/Disconnect"
+                  - "Computer/Build"
+                  - "Computer/Configure"
+                  - "Computer/Connect"
+                  - "Computer/Create"
+                  - "Computer/Delete"
+                  - "Computer/Disconnect"
 
                 entries:
                   - user: "priyanshu3103"
