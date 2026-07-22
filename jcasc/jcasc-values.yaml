@@ -55,14 +55,6 @@ jcasc:
 
                   - "Credentials/View"
 
-                  - "hudson.model.Computer.Build"
-                  - "hudson.model.Computer.Configure"
-                  - "hudson.model.Computer.Connect"
-                  - "hudson.model.Computer.Create"
-                  - "hudson.model.Computer.Delete"
-                  - "hudson.model.Computer.Disconnect"
-                  - "hudson.model.Computer.Provision"
-
                 entries:
                   - user: "priyanshu3103"
 
