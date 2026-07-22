@@ -108,3 +108,26 @@ jcasc:
     unclassified:
       globalLibraries:
         libraries: []
+
+  jobs: |
+    jobs:
+      - script: >
+          pipelineJob('Seed Job') {
+            description('Creates and updates all Jenkins jobs')
+  
+            definition {
+              cpsScm {
+                scm {
+                  git {
+                    remote {
+                      url('https://github.com/priyanshu-devops-release/jenkins-config-management.git')
+                      credentials('github-token')
+                    }
+                    branch('master')
+                  }
+                }
+  
+                scriptPath('Jenkinsfile')
+              }
+            }
+          }
