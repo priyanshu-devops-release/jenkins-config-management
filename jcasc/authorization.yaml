@@ -1,11 +1,5 @@
-jenkins:
-  authorizationStrategy:
-    github:
-      adminUserNames: "priyanshu3103"
-      organizationNames: ""
-      useRepositoryPermissions: false
-      authenticatedUserReadPermission: true
-      authenticatedUserCreateJobPermission: false
-      allowGithubWebHookPermission: false
-      allowAnonymousReadPermission: false
-      allowAnonymousJobStatusPermission: false
+jcasc:
+  authorization: |
+      jenkins:
+        authorizationStrategy:
+          roleBased: {}

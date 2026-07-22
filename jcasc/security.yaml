@@ -1,8 +1,6 @@
-jenkins:
-  securityRealm:
-    github:
-      githubWebUri: https://github.com
-      githubApiUri: https://api.github.com
-      clientID: ${GITHUB_CLIENT_ID}
-      clientSecret: ${GITHUB_CLIENT_SECRET}
-      oauthScopes: read:org,user:email
+jcasc:
+  security: |
+    jenkins:
+      securityRealm:
+        local:
+          allowsSignup: false
