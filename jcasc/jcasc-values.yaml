@@ -2,14 +2,25 @@ jcasc:
   security: |
     jenkins:
       securityRealm:
-        local:
-          allowsSignup: false
+        github:
+          clientID: ${GITHUB_CLIENT_ID}
+          clientSecret: ${GITHUB_CLIENT_SECRET}
+          githubWebUri: https://github.com
+          githubApiUri: https://api.github.com
+          oauthScopes: "read:org,user:email"
 
   authorization: |
     jenkins:
       authorizationStrategy:
-        loggedInUsersCanDoAnything:
-          allowAnonymousRead: false
+        github:
+          adminUserNames: "priyanshu3103"
+          organizationNames: "priyanshu-devops-release"
+          useRepositoryPermissions: false
+          authenticatedUserReadPermission: true
+          authenticatedUserCreateJobPermission: true
+          allowGithubWebHookPermission: false
+          allowAnonymousReadPermission: false
+          allowAnonymousJobStatusPermission: false
 
   credentials: |
     credentials:
