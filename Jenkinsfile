@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git(
+                    url: 'https://github.com/priyanshu-devops-release/jenkins-config-management.git',
+                    branch: 'master',
+                    credentialsId: 'github-token'
+                )
+            }
+        }
+
+        stage('Generate Jobs') {
+            steps {
+                jobDsl(
+                    targets: 'jobdsl/**/*.groovy',
+                    removedJobAction: 'DELETE',
+                    removedViewAction: 'DELETE',
+                    lookupStrategy: 'JENKINS_ROOT'
+                )
+            }
+        }
+    }
+}
