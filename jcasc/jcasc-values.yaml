@@ -15,99 +15,101 @@ jcasc:
         roleBased:
           roles:
             global:
-            #
-            # ===========================
-            # ADMIN
-            # ===========================
-            #
-            - name: Admin
-              description: Full Jenkins Administration
-              permissions:
-                - "Overall/Administer"
-              assignments:
-                - "priyanshubarapatre30@gmail.com"
-            #
-            # ===========================
-            # DEVOPS
-            # ===========================
-            #
-            - name: Devops Team
-              description: Manage Jenkins infrastructure and pipelines
-              permissions:
-                - "Overall/Read"
+              #
+              # ===========================
+              # ADMIN
+              # ===========================
+              #
+              - name: Admin
+                description: Full Jenkins Administration
+                permissions:
+                  - "Overall/Administer"
+                assignments:
+                  - "priyanshu3103"
 
-                - "Job/Create"
-                - "Job/Delete"
-                - "Job/Configure"
-                - "Job/Read"
-                - "Job/Build"
-                - "Job/Cancel"
-                - "Job/Discover"
-                - "Job/Move"
-                - "Job/Workspace"
+              #
+              # ===========================
+              # DEVOPS
+              # ===========================
+              #
+              - name: DevOps
+                description: Manage Jenkins infrastructure and pipelines
+                permissions:
+                  - "Overall/Read"
 
-                - "Run/Delete"
-                - "Run/Replay"
-                - "Run/Update"
+                  - "Job/Create"
+                  - "Job/Delete"
+                  - "Job/Configure"
+                  - "Job/Read"
+                  - "Job/Build"
+                  - "Job/Cancel"
+                  - "Job/Discover"
+                  - "Job/Move"
+                  - "Job/Workspace"
 
-                - "View/Read"
+                  - "Run/Delete"
+                  - "Run/Replay"
+                  - "Run/Update"
 
-                - "Credentials/View"
+                  - "View/Read"
 
-                - "Agent/Build"
-                - "Agent/Configure"
-                - "Agent/Connect"
-                - "Agent/Create"
-                - "Agent/Delete"
-                - "Agent/Disconnect"
+                  - "Credentials/View"
 
-              assignments:
-                - "priyanshubarapatre30@gmail.com"
+                  - "Agent/Build"
+                  - "Agent/Configure"
+                  - "Agent/Connect"
+                  - "Agent/Create"
+                  - "Agent/Delete"
+                  - "Agent/Disconnect"
 
-          #
-          # ===========================
-          # DEVELOPERS
-          # ===========================
-          #
-          - name: developer
-            description: Build applications
-            permissions:
+                assignments:
+                  - "priyanshu3103"
 
-              - "Overall/Read"
+              #
+              # ===========================
+              # DEVELOPERS
+              # ===========================
+              #
+              - name: Developer
+                description: Build applications
+                permissions:
+                  - "Overall/Read"
 
-              - "Job/Read"
-              - "Job/Build"
-              - "Job/Cancel"
-              - "Job/Discover"
-              - "Job/Workspace"
+                  - "Job/Read"
+                  - "Job/Build"
+                  - "Job/Cancel"
+                  - "Job/Discover"
+                  - "Job/Workspace"
 
-              - "Run/Replay"
+                  - "Run/Replay"
 
-              - "View/Read"
+                  - "View/Read"
 
-            assignments:
-              - "priyanshubarapatre30@gmail.com"
+                assignments:
+                  - "developer-user"
 
-          #
-          # ===========================
-          # QA
-          # ===========================
-          #
-          - name: qa
-            description: Execute test pipelines
+              #
+              # ===========================
+              # QA
+              # ===========================
+              #
+              - name: QA
+                description: Execute test pipelines
+                permissions:
+                  - "Overall/Read"
 
-            permissions:
+                  - "Job/Read"
+                  - "Job/Build"
+                  - "Job/Discover"
 
-              - "Overall/Read"
+                  - "View/Read"
 
-              - "Job/Read"
-              - "Job/Build"
-              - "Job/Discover"
+                assignments:
+                  - "qa-user"
 
-              - "View/Read"
+            items: []
 
-            assignments:
-              - "priyanshubarapatre30@gmail.com"
+            agents: []
 
   libraries: |
     unclassified:
