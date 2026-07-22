@@ -25,7 +25,7 @@ jcasc:
                 permissions:
                   - "Overall/Administer"
                 entries:
-                  - "priyanshu3103"
+                  - user: "priyanshu3103"
 
               #
               # ===========================
@@ -63,7 +63,7 @@ jcasc:
                   - "Computer/Disconnect"
 
                 entries:
-                  - "priyanshu3103"
+                  - user: "priyanshu3103"
 
               #
               # ===========================
@@ -86,7 +86,7 @@ jcasc:
                   - "View/Read"
 
                 entries:
-                  - "priyanshu3103"
+                  - user: "priyanshu3103"
 
               #
               # ===========================
@@ -105,7 +105,7 @@ jcasc:
                   - "View/Read"
 
                 entries:
-                  - "priyanshu3103"
+                  - user: "priyanshu3103"
 
             items: []
 
