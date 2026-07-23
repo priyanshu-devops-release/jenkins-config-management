@@ -2,7 +2,9 @@ pipeline {
      agent {
         label 'jenkins-agent'
     }
-
+    options {
+        timestamps()
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -17,13 +19,14 @@ pipeline {
         stage('Generate Jobs') {
             steps {
                 jobDsl(
-                    targets: targets: '''
+                    targets: '''
                         jobdsl/folders.groovy
                         jobdsl/applications.groovy
                         jobdsl/pipelines/*.groovy
                     ''',
                     removedJobAction: 'DELETE',
                     removedViewAction: 'DELETE',
+                    removedConfigFilesAction: 'DELETE',
                     lookupStrategy: 'JENKINS_ROOT'
                 )
             }

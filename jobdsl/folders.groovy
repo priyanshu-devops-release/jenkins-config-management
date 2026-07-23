@@ -1,6 +1,6 @@
 folder('Applications') {
     displayName('Applications')
-    description('Application CI/CD Pipelines')
+    description('Application Pipelines')
 }
 
 folder('Infrastructure') {

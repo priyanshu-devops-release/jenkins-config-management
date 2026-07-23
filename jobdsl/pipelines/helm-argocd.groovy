@@ -1,6 +1,6 @@
 pipelineJob('Applications/helm-argocd') {
 
-    description('Deploy Helm ArgoCD Repository')
+    description('Deploy helm-argocd')
 
     definition {
         cpsScm {
@@ -10,17 +10,10 @@ pipelineJob('Applications/helm-argocd') {
                         url('https://github.com/priyanshu-devops-release/helm-argocd.git')
                         credentials('github-token')
                     }
-
                     branch('master')
                 }
             }
-
             scriptPath('Jenkinsfile')
         }
-    }
-
-    logRotator {
-        daysToKeep(30)
-        numToKeep(20)
     }
 }

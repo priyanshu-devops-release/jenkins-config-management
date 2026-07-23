@@ -1,6 +1,6 @@
 pipelineJob('Utilities/Seed') {
 
-    description('Regenerates all Jenkins jobs from Job DSL')
+    description('Regenerates all Jenkins jobs')
 
     definition {
         cpsScm {
@@ -8,12 +8,17 @@ pipelineJob('Utilities/Seed') {
                 git {
                     remote {
                         url('https://github.com/priyanshu-devops-release/jenkins-config-management.git')
+                        credentials('github-token')
                     }
                     branch('master')
                 }
             }
-
             scriptPath('Jenkinsfile')
         }
+    }
+
+    logRotator {
+        daysToKeep(30)
+        numToKeep(20)
     }
 }
