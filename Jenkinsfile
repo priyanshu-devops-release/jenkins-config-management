@@ -17,7 +17,11 @@ pipeline {
         stage('Generate Jobs') {
             steps {
                 jobDsl(
-                    targets: 'jobdsl/seed.groovy',
+                    targets: targets: '''
+                        jobdsl/folders.groovy
+                        jobdsl/applications.groovy
+                        jobdsl/pipelines/*.groovy
+                    ''',
                     removedJobAction: 'DELETE',
                     removedViewAction: 'DELETE',
                     lookupStrategy: 'JENKINS_ROOT'
