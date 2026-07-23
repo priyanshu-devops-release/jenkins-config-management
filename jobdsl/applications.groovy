@@ -8,7 +8,6 @@ pipelineJob('Utilities/Seed') {
                 git {
                     remote {
                         url('https://github.com/priyanshu-devops-release/jenkins-config-management.git')
-                        credentials('github-token')
                     }
                     branch('master')
                 }
