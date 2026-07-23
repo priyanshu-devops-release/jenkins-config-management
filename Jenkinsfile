@@ -2,9 +2,6 @@ pipeline {
      agent {
         label 'jenkins-agent'
     }
-    options {
-        timestamps()
-    }
     stages {
         stage('Checkout') {
             steps {
