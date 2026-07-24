@@ -1,4 +1,4 @@
-pipelineJob('Utilities/Seed') {
+pipelineJob('Applications/Seed') {
 
     description('Regenerates all Jenkins jobs')
 
