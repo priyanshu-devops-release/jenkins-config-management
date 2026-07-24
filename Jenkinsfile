@@ -1,7 +1,6 @@
 pipeline {
      agent {
-        label 'jenkins-agent',
-        showRawYaml: false
+        label 'jenkins-agent'
     }
     stages {
         stage('Checkout') {
