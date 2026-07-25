@@ -114,7 +114,9 @@ jcasc:
     - script: >
         freeStyleJob('Seed Job') {
           description('Creates and updates all Jenkins jobs')
-  
+
+          label('jenkins-agent')
+
           scm {
             git {
               remote {
@@ -124,7 +126,7 @@ jcasc:
               branch('master')
             }
           }
-  
+
           steps {
             jobDsl {
               targets('''
@@ -138,7 +140,7 @@ jcasc:
               lookupStrategy('JENKINS_ROOT')
             }
           }
-  
+
           logRotator {
             numToKeep(20)
           }
