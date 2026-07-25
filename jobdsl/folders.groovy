@@ -1,14 +1,22 @@
+// This is a Job DSL script to create folders in Jenkins for organizing jobs.
+folder('Applications') {
+    displayName('Applications')
+    description('Application Pipelines')
+}
+
 folder('Applications/NodeJS') {
-    displayName('Applications')
-    description('Application Pipelines')
+    displayName('NodeJS')
+    description('Node.js Pipelines')
 }
+
 folder('Applications/Python') {
-    displayName('Applications')
-    description('Application Pipelines')
+    displayName('Python')
+    description('Python Pipelines')
 }
+
 folder('Applications/Maven') {
-    displayName('Applications')
-    description('Application Pipelines')
+    displayName('Maven')
+    description('Maven Pipelines')
 }
 
 folder('Infrastructure') {
