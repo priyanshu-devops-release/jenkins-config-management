@@ -1,4 +1,4 @@
-pipelineJob('Applications/NodeJS/node-sample') {
+pipelineJob('Applications/NodeJS/NODE-DEMO') {
 
     description('Node.js sample pipeline running on Kubernetes node-docker-agent.')
 
