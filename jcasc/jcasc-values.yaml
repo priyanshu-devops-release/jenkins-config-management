@@ -131,7 +131,7 @@ jcasc:
             jobDsl {
               targets('''
                   jobdsl/folders.groovy
-                  jobdsl/applications.groovy
+                  jobdsl/tools.groovy
                   jobdsl/pipelines/*.groovy
               ''')
               removedJobAction('DELETE')
