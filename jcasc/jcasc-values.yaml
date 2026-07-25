@@ -109,36 +109,37 @@ jcasc:
       globalLibraries:
         libraries: []
 
-  jobs:
-  - script: >
-      freeStyleJob('Seed Job') {
-        description('Creates and updates all Jenkins jobs')
-
-        scm {
-          git {
-            remote {
-              url('https://github.com/priyanshu-devops-release/jenkins-config-management.git')
-              credentials('github-token')
+  jobs: |
+   jobs:
+    - script: >
+        freeStyleJob('Seed Job') {
+          description('Creates and updates all Jenkins jobs')
+  
+          scm {
+            git {
+              remote {
+                url('https://github.com/priyanshu-devops-release/jenkins-config-management.git')
+                credentials('github-token')
+              }
+              branch('master')
             }
-            branch('master')
+          }
+  
+          steps {
+            jobDsl {
+              targets('''
+                  jobdsl/folders.groovy
+                  jobdsl/applications.groovy
+                  jobdsl/pipelines/*.groovy
+              ''')
+              removedJobAction('DELETE')
+              removedViewAction('DELETE')
+              removedConfigFilesAction('DELETE')
+              lookupStrategy('JENKINS_ROOT')
+            }
+          }
+  
+          logRotator {
+            numToKeep(20)
           }
         }
-
-        steps {
-          jobDsl {
-            targets('''
-                jobdsl/folders.groovy
-                jobdsl/applications.groovy
-                jobdsl/pipelines/*.groovy
-            ''')
-            removedJobAction('DELETE')
-            removedViewAction('DELETE')
-            removedConfigFilesAction('DELETE')
-            lookupStrategy('JENKINS_ROOT')
-          }
-        }
-
-        logRotator {
-          numToKeep(20)
-        }
-      }
