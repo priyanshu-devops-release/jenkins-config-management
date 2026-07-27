@@ -19,135 +19,53 @@ jcasc:
               # ===========================
               # ADMIN
               # ===========================
-              #
               - name: Admin
                 description: Full Jenkins Administration
                 permissions:
                   - "Overall/Administer"
                 entries:
                   - user: "priyanshu3103"
-
-              #
               # ===========================
-              # DEVOPS
-              # ===========================
-              #
-              - name: DevOps
-                description: Manage Jenkins infrastructure and pipelines
+              # AUTHENTICATED
+              # ===========================    
+              - name: Authenticated
                 permissions:
                   - "Overall/Read"
-
-                  - "Job/Create"
-                  - "Job/Delete"
-                  - "Job/Configure"
-                  - "Job/Read"
-                  - "Job/Build"
-                  - "Job/Cancel"
-                  - "Job/Discover"
-                  - "Job/Move"
-                  - "Job/Workspace"
-
-                  - "Run/Delete"
-                  - "Run/Replay"
-                  - "Run/Update"
-
-                  - "View/Read"
-
-                  - "Credentials/View"
-
-                entries:
-                  - user: "priyanshu3103"
-
-              #
-              # ===========================
-              # DEVELOPERS
-              # ===========================
-              #
-              - name: Developer
-                description: Build applications
-                permissions:
-                  - "Overall/Read"
-
-                  - "Job/Read"
-                  - "Job/Build"
-                  - "Job/Cancel"
-                  - "Job/Discover"
-                  - "Job/Workspace"
-
-                  - "Run/Replay"
-
-                  - "View/Read"
-
-                entries:
-                  - user: "priyanshu3103"
-
-              #
-              # ===========================
-              # QA
-              # ===========================
-              #
-              - name: QA
-                description: Execute test pipelines
-                permissions:
-                  - "Overall/Read"
-
-                  - "Job/Read"
-                  - "Job/Build"
-                  - "Job/Discover"
-
-                  - "View/Read"
-
                 entries:
                   - user: "priyanshu3103"
                   - user: "mayurs2006"
-                  
             # ===========================
             # PROJECT ROLES
             # ===========================
-            
             items:
-              - name: Admin
-                description: Full Jenkins Administration
-                pattern: "^(Seed Job|Applications|Infrastructure|Pipelines)(/.*)?$"
-                permissions:
-                  - "Overall/Administer"
-                entries:
-                  - user: "priyanshu3103"
-
-              - name: DevOps
-                description: Manage Jenkins infrastructure and pipelines
-                pattern: "^(Applications|Infrastructure|Pipelines)(/.*)?$"
+              - name: SeedJob
+                pattern: "^Seed Job$"
                 permissions:
                   - "Job/Read"
                   - "Job/Build"
-                  - "Job/Create"
-                  - "Job/Delete"
                   - "Job/Configure"
+                entries:
+                  - user: "priyanshu3103"
+                  
+              - name: Applications
+                pattern: "^Applications(/.*)?$"
+                permissions:
+                  - "Job/Read"
+                  - "Job/Discover"
+                  - "Job/Build"
                   - "Job/Workspace"
-                  - "Run/Delete"
-                  - "Run/Replay"
-                  - "Run/Update"
                 entries:
                   - user: "priyanshu3103"
 
-              - name: Developer
-                description: Build applications
-                pattern: "^Applications(/.*)?$"
+              - name: Infrastructure
+                pattern: "^Infrastructure(/.*)?$"
                 permissions:
                   - "Job/Read"
+                  - "Job/Discover"
                   - "Job/Build"
                   - "Job/Workspace"
                 entries:
-                  - user: "mayurs2006"
-
-              - name: QA
-                description: Execute test pipelines
-                pattern: "^Applications(/.*)?$"
-                permissions:
-                  - "Job/Read"
-                  - "Job/Build"
-                entries:
-                  - user: "mayurs2006"
+                  - user: "priyanshu3103"
             agents: []
 
   libraries: |
