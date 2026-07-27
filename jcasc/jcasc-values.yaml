@@ -46,7 +46,7 @@ jcasc:
                   - "Job/Configure"
                 entries:
                   - user: "priyanshu3103"
-                  
+
               - name: Applications
                 pattern: "^Applications(/.*)?$"
                 permissions:
@@ -56,6 +56,7 @@ jcasc:
                   - "Job/Workspace"
                 entries:
                   - user: "priyanshu3103"
+                  - user: "mayurs2006"
 
               - name: Infrastructure
                 pattern: "^Infrastructure(/.*)?$"
