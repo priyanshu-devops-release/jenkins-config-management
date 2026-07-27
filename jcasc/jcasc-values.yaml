@@ -22,6 +22,7 @@ jcasc:
               #
               - name: Admin
                 description: Full Jenkins Administration
+                pattern: "^Applications(/.*)?$^Infrastructure(/.*)?$^Pipelines(/.*)?$"
                 permissions:
                   - "Overall/Administer"
                 entries:
@@ -34,6 +35,7 @@ jcasc:
               #
               - name: DevOps
                 description: Manage Jenkins infrastructure and pipelines
+                pattern: "^Applications(/.*)?$^Infrastructure(/.*)?$"
                 permissions:
                   - "Overall/Read"
 
@@ -65,6 +67,7 @@ jcasc:
               #
               - name: Developer
                 description: Build applications
+                pattern: "^Applications(/.*)?$"
                 permissions:
                   - "Overall/Read"
 
@@ -88,6 +91,7 @@ jcasc:
               #
               - name: QA
                 description: Execute test pipelines
+                pattern: "^Applications(/.*)?$"
                 permissions:
                   - "Overall/Read"
 
