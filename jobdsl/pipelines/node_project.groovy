@@ -18,28 +18,35 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                checkout scm
+                git branch: 'mastrer'
+                    url: 'https://github.com/priyanshu-devops-release/toolkit.git'
+                // Add credentialsId: 'github-creds' if the repo is private
             }
         }
 
-        stage('Verify Environment') {
+        stage('Verify Node') {
             steps {
                 container('node') {
                     sh '''
-                        echo "Node Version"
                         node --version
-
-                        echo "NPM Version"
                         npm --version
                     '''
                 }
             }
         }
 
-        stage('Install') {
+        stage('Install Dependencies') {
             steps {
                 container('node') {
-                    sh 'npm install'
+                    sh 'npm ci'
+                }
+            }
+        }
+
+        stage('Lint') {
+            steps {
+                container('node') {
+                    sh 'npm run lint'
                 }
             }
         }
@@ -63,11 +70,15 @@ pipeline {
 
     post {
         success {
-            echo 'Build Successful'
+            echo '✅ Build Successful'
         }
-
         failure {
-            echo 'Build Failed'
+            echo '❌ Build Failed'
+        }
+        always {
+            container('node') {
+                sh 'ls -la'
+            }
         }
     }
 }
