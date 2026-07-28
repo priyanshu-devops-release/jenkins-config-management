@@ -18,7 +18,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'mastrer'
+                git branch: 'master'
                     url: 'https://github.com/priyanshu-devops-release/toolkit.git'
                 // Add credentialsId: 'github-creds' if the repo is private
             }
