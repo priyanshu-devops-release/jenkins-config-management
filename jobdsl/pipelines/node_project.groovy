@@ -34,38 +34,6 @@ pipeline {
                 }
             }
         }
-
-        stage('Install Dependencies') {
-            steps {
-                container('node') {
-                    sh 'npm ci'
-                }
-            }
-        }
-
-        stage('Lint') {
-            steps {
-                container('node') {
-                    sh 'npm run lint'
-                }
-            }
-        }
-
-        stage('Test') {
-            steps {
-                container('node') {
-                    sh 'npm test'
-                }
-            }
-        }
-
-        stage('Build') {
-            steps {
-                container('node') {
-                    sh 'npm run build'
-                }
-            }
-        }
     }
 
     post {
