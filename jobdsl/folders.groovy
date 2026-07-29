@@ -23,6 +23,10 @@ folder('Infrastructure') {
     displayName('Infrastructure')
     description('Infrastructure Pipelines')
 }
+folder('Infrastructure/ArgoCD') {
+    displayName('ArgoCD')
+    description('ArgoCD Pipelines')
+}
 
 // folder('Utilities') {
 //     displayName('Utilities')
