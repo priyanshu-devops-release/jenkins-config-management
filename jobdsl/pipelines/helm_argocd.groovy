@@ -1,4 +1,4 @@
-pipelineJob('Infrastructure/helm-argocd') {
+pipelineJob('Infrastructure/ArgoCD/Helm-ArgoCD') {
 
     description('Deploy helm-argocd')
 
