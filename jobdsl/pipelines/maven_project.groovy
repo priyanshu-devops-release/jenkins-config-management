@@ -19,7 +19,7 @@ pipeline {
                         java -version
 
                         echo "Maven Version:"
-                        mvn -version
+                        mvn --version
 
                         echo "Working Directory:"
                         pwd
