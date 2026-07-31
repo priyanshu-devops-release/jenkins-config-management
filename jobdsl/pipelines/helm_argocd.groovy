@@ -27,7 +27,7 @@ pipeline {
             description: 'Kubernetes Namespace'
         )
 
-        choices(
+        choice(
             name: 'K8S_COMPONENT',
             choices: [
                 'ingress',
@@ -58,7 +58,7 @@ pipeline {
     }
 }
 """.stripIndent())
-            sandbox(true)
+            sandbox(false)
         }
     }
 }
