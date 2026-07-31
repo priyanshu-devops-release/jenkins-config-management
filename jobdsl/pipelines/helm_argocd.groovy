@@ -27,7 +27,7 @@ pipeline {
             description: 'Kubernetes Namespace'
         )
 
-        string(
+        choices(
             name: 'K8S_COMPONENT',
             choices: [
                 'ingress',
