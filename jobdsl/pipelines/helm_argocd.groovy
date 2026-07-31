@@ -43,8 +43,8 @@ pipeline {
             steps {
                 container('kubectl') {
                     sh '''
-                        kubectl rollout restart ${K8S_COMPONENT} ${APPLICATION} -n ${NAMESPACE}
-                        kubectl rollout status ${K8S_COMPONENT} ${APPLICATION} -n ${NAMESPACE} --timeout=300s
+                        kubectl rollout restart \${params.K8S_COMPONENT} \${params.APPLICATION} -n \${params.NAMESPACE}
+                        kubectl rollout status \${params.K8S_COMPONENT} \${params.APPLICATION} -n \${params.NAMESPACE} --timeout=300s
                     '''
                 }
             }
