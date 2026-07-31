@@ -31,8 +31,8 @@ pipeline {
             name: 'K8S_COMPONENT',
             choices: [
                 'ingress',
-                'service',
-                'deployment'
+                'daemonset',
+                'statefulset'
             ],
             description: 'K8s Component Name'
         )
