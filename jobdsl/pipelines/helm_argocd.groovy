@@ -28,7 +28,7 @@ pipeline {
         )
 
         string(
-            name: 'K8s-COMPONENT',
+            name: 'K8S_COMPONENT',
             choices: [
                 'ingress',
                 'service',
@@ -43,8 +43,8 @@ pipeline {
             steps {
                 container('kubectl') {
                     sh '''
-                        kubectl rollout restart ${K8s-COMPONENT} ${APPLICATION} -n ${NAMESPACE}
-                        kubectl rollout status ${K8s-COMPONENT} ${APPLICATION} -n ${NAMESPACE} --timeout=300s
+                        kubectl rollout restart ${K8S_COMPONENT} ${APPLICATION} -n ${NAMESPACE}
+                        kubectl rollout status ${K8S_COMPONENT} ${APPLICATION} -n ${NAMESPACE} --timeout=300s
                     '''
                 }
             }
