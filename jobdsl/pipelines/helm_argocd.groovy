@@ -30,7 +30,7 @@ pipeline {
         choice(
             name: 'K8S_COMPONENT',
             choices: [
-                'ingress',
+                'deployment',
                 'daemonset',
                 'statefulset'
             ],
